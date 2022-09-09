@@ -4,12 +4,15 @@ const { response } = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient
 
+require('dotenv').config()
+
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.set('view engine','ejs');
 
-MongoClient.connect('mongodb+srv://Sarkis:9hxVNWdtRBJBlY0Z@cluster0.j3ycbt5.mongodb.net/?retryWrites=true&w=majority', { useUnifiedTopology: 
-true})
+MongoClient.connect(process.env.DB_STRING, { 
+    useUnifiedTopology: true
+})
     .then(client =>{
         console.log('Connected to Database')
         const db = client.db('star-wars-quotes')
@@ -64,6 +67,6 @@ app.use(bodyParser.urlencoded({ extended:true}));
 
 
 
-app.listen(process.env.PORT| 3000, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log(`server is running`)
 });
