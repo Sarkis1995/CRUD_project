@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>may the node be with you</h1>
+    <h1>CRUD Project</h1>
     <form action="/quotes" method="POST">
         <input type="text" placeholder="name" name="name">
         <input type="text" placeholder="quote" name="quote">
@@ -23,16 +23,16 @@
         <% } %>
     </ul>
     <div>
-        <h2> Darth Vader Invades!</h2>
+        <h2> Quote replacement!</h2>
         <p>
-            Replace first Yoda quote with a quote written by Darth Vader
+            Replace first quote with a different quote
         </p>
         <button id="update-button">Replace Yoda quote</button>
     </div>
     <div>
-        <h2>Remove Darth Vader</h2>
-        <p>Delete one Darth Vader quote. Does nothing if there are no more Darth Vader quotes</p>
-        <button id="delete-button">Delete Darth Vader's quote</button>
+        <h2>Remove Quote</h2>
+        <p>Delete one quote, does nothing if there are no more quotes</p>
+        <button id="delete-button">Delete quote</button>
     </div>
     <div id="message"></div>
     <script src="/main.js"></script>
