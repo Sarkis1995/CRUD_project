@@ -33,7 +33,7 @@ MongoClient.connect(process.env.DB_STRING, {
         })
         app.put('/quotes', (req, res) =>{
             quotesCollection.findOneAndUpdate(
-                {name: 'Yoda'.toLocaleLowerCase().toLocaleUpperCase()},
+                {name: `${req.body.name}`},
                 {$set:{
                     name: req.body.name,
                     quote: req.body.quote

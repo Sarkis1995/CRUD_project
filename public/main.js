@@ -7,9 +7,9 @@ update.addEventListener('click', _=>{
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-            name: 'Darth Vader',
-            quote: "I find your lack of faith disturbing."
-        })
+            name: 'Someone',
+            quote: "Hello"
+        }),
     })
     .then(res =>{
         if (res.ok) return res.json()
@@ -25,8 +25,8 @@ deleteButton.addEventListener('click', _ =>{
         method: 'delete',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-            name: 'Darth Vader'
-        })
+            name: ''
+        }),
     })
     .then(res => {
         if (res.ok) return res.json()
