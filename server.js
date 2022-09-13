@@ -33,7 +33,7 @@ MongoClient.connect(process.env.DB_STRING, {
         })
         app.put('/quotes', (req, res) =>{
             quotesCollection.findOneAndUpdate(
-                {name: `${req.body.name}`},
+                {name: String},
                 {$set:{
                     name: req.body.name,
                     quote: req.body.quote
@@ -47,7 +47,7 @@ MongoClient.connect(process.env.DB_STRING, {
         })
         app.delete('/quotes', (req, res) =>{
             quotesCollection.deleteOne(
-                {name: req.body.name},
+                {name: String},
             )
             .then(result =>{
                 if (result.deletedCount === 0){
