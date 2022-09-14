@@ -33,7 +33,7 @@ deleteButton.addEventListener('click', _ =>{
     })
     .then(response => {
         if (response === 'No quote to delete') {
-            messageDiv.textContent = 'No Darth Vader quote to delete'
+            messageDiv.textContent = 'No quote to delete'
         } else{
             window.location.reload(true)
         }
