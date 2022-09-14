@@ -53,7 +53,7 @@ MongoClient.connect(process.env.DB_STRING, {
                 if (result.deletedCount === 0){
                     return res.json('No quote to delete')
                 }
-                res.json(`Deleted Darth Vader's quote`)
+                res.json(`Deleted quote`)
             })
             .catch(error => console.error(error))
         })
