@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const { response } = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient
+const yelp = require('yelp-fusion');
+const client = yelp.client(process.env.Yelp_API);
 
 require('dotenv').config()
 
