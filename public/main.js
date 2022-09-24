@@ -1,6 +1,6 @@
 const deleteButton = document.querySelector('#delete-button')
-const update = document.querySelector('#update-button')
 const messageDiv = document.querySelector('#message')
+const searchButton = document.querySelector(`#restaurant-search`)
 
 
 deleteButton.addEventListener('click', _ =>{
@@ -24,3 +24,16 @@ deleteButton.addEventListener('click', _ =>{
     .catch(error => console.error(error))
 })
 
+searchButton.addEventListener('click', _ =>{
+    fetch(`https://api.yelp.com/v3/businesses/search?location=Los_Angeles_County&term=restaurants`, {
+        method: 'get',
+        headers: {'Authorization': process.env.Yelp_API},
+        body: JSON.stringify({
+            name: String
+        }),
+    })
+    .then(res =>{
+        if(res.ok) return res.json()
+    })
+    .catch(error => console.error(error))
+})
